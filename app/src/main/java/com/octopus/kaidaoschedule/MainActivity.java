@@ -1,19 +1,8 @@
 package com.octopus.kaidaoschedule;
-
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.view.View;
-
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,8 +12,6 @@ public class MainActivity extends AppCompatActivity {
 
     EditText txtId, txtUsername, txtEmail, txtPhone;
     Button btnRegister, btnReset;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +25,6 @@ public class MainActivity extends AppCompatActivity {
         btnRegister = findViewById(R.id.btnRegister);
         btnReset = findViewById(R.id.btnReset);
 
-
-
-
-
-
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +34,20 @@ public class MainActivity extends AppCompatActivity {
                 txtPhone.setText("");
                 txtId.requestFocus();
 
+                String username, id, email, phone;
+                id = txtId.getText().toString();
+                username = txtUsername.getText().toString();
+                email = txtEmail.getText().toString();
+                phone = txtPhone.getText().toString();
+
+                String str = "- Username : "+ username;
+                str += "\n- ID : "+ id;
+                str += "\n- Email : "+ email;
+                str += "\n- Phone : "+ phone;
+
+                Toast.makeText(getApplicationContext(), str, Toast.LENGTH_LONG).show();
             }
+
         });
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
@@ -73,11 +68,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
         //Dissmissing Keyboard
-
         txtId.setOnFocusChangeListener(new View.OnFocusChangeListener(){
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -87,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
         txtUsername.setOnFocusChangeListener(new View.OnFocusChangeListener(){
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -97,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
         txtEmail.setOnFocusChangeListener(new View.OnFocusChangeListener(){
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -107,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
         txtPhone.setOnFocusChangeListener(new View.OnFocusChangeListener(){
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -117,8 +105,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-
 
     }
 }
