@@ -8,6 +8,8 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:background="@color/secondary"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
     tools:context=".MainActivity">
 
 
@@ -34,12 +36,14 @@
 
 
     <EditText
+        android:id="@+id/txtId"
         android:inputType="text"
         android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint=" ລະຫັດນັກສຶກສາ"
+        android:hint="ລະຫັດນັກສຶກສາ"
         android:drawableLeft="@drawable/card"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/nsl_regular"
         android:textColor="@color/white"
         android:textColorHint="@color/muted"
@@ -47,12 +51,14 @@
     />
 
     <EditText
+        android:id="@+id/txtUsername"
         android:inputType="text"
         android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint=" ຊື່ ແລະ ນາມສະກຸນ"
+        android:hint="ຊື່ ແລະ ນາມສະກຸນ"
         android:drawableLeft="@drawable/person"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/nsl_regular"
         android:textColorHint="@color/muted"
         android:textColor="@color/white"
@@ -61,12 +67,14 @@
 
 
     <EditText
+        android:id="@+id/txtEmail"
         android:inputType="text"
         android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint=" ອີເມວ"
+        android:hint="ອີເມວ"
         android:drawableLeft="@drawable/mail"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/nsl_regular"
         android:textColorHint="@color/muted"
         android:textColor="@color/white"
@@ -74,27 +82,55 @@
         />
 
     <EditText
+        android:id="@+id/txtPhone"
         android:inputType="text"
         android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint=" ເບີໂທລະສັບ"
+        android:hint="ເບີໂທລະສັບ"
         android:drawableLeft="@drawable/call"
+        android:drawablePadding="5dp"
+        android:textColor="@color/white"
         android:fontFamily="@font/nsl_regular"
         android:textColorHint="@color/muted"
         android:backgroundTint="@color/primary"
         />
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ລົງທະບຽນ"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/nsl_bold"
-        android:textColor="@color/secondary"
-        android:backgroundTint="@color/primary"
+        android:padding="20dp"
+        >
 
-        />
+        <Button
+            android:layout_margin="5dp"
+            android:id="@+id/btnRegister"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ລົງທະບຽນ"
+            android:fontFamily="@font/nsl_bold"
+            android:textColor="@color/secondary"
+            android:backgroundTint="@color/primary"
+
+            />
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ຍົກເລີກ"
+            android:fontFamily="@font/nsl_bold"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/red"
+
+
+            />
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

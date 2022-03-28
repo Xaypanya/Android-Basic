@@ -10,4 +10,6 @@
     <color name="muted">#c7c7c7</color>
     <color name="secondary">#3A3845</color>
     <color name="primary">#FFC300</color>
+    <color name="base">#233CDB</color>
+    <color name="red">#FF1818</color>
 </resources>
